@@ -12,7 +12,7 @@ export function ipcMainHandle<Key extends keyof EventPayloadMapping>(
 ) {
 	ipcMain.handle(key, (event) => {
 		validateEventFrame(event.senderFrame);
-		handler();
+		return handler();
 	});
 }
 
